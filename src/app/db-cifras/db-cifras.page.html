@@ -1,0 +1,98 @@
+  <ion-toolbar>
+    <ion-label class="tituloCifras" slot="start">
+      Ciflex
+    </ion-label>
+ 
+    <ion-label class="tituloCifras2" slot="end">
+      Olá, {{nome}}...
+    </ion-label>
+  </ion-toolbar>
+
+<ion-content padding>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12"> 
+        <ion-segment scrollable>
+        <ion-segment-button *ngFor="let category of data"  (click)="trataCategoria(category.categoria)">
+          <ion-label>{{category.categoria}}</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+<ion-slides [options]="option">
+<ion-slide>
+  <ion-card>
+    <img src="assets/images/1.jpg">
+  </ion-card>
+</ion-slide>
+<ion-slide>
+  <ion-card>
+    <img src="assets/images/2.jpg">
+  </ion-card>
+</ion-slide>
+<ion-slide>
+  <ion-card>
+    <img src="assets/images/3.jpg">
+  </ion-card>
+</ion-slide>
+</ion-slides>
+
+
+ 
+  <div class="tituloCifras">Top Cifras</div>
+  
+
+
+  <ion-list>
+    <ion-item  *ngFor="let item of dataMusicas" (click)="visualizaCifra(item)"> 
+      <ion-avatar slot="start">
+        <img src="https://i.pinimg.com/564x/e4/8e/b0/e48eb052b67d4d0eede932ab85c41a71.jpg">
+      </ion-avatar>
+ 
+      <ion-label text-wrap>
+        <h2><strong>{{item.artista}}</strong></h2>
+        <h2>{{item.musica}}</h2>
+      </ion-label>
+ 
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+ 
+    </ion-item>
+ 
+  </ion-list>
+  
+</ion-content>
+
+
+<!-- Fade Footer -->
+<ion-footer transparent>
+  <ion-toolbar transparent>
+    <ion-tabs transparent>
+      <ion-tab-bar slot="bottom" >
+
+        <ion-tab-button routerLink="/db-cifras">
+          <ion-icon name="musical-notes" color="dark"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+  
+        <ion-tab-button routerLink="/post-cifra" >
+          <ion-icon name="download"></ion-icon>
+          <ion-label>Pdf</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button routerLink="/cria-cifra" >   
+          <ion-icon name="add-circle-sharp"></ion-icon>
+          <ion-label>Cifra</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button routerLink="/profile" > 
+          <ion-icon name="person-circle-sharp"></ion-icon>
+          <ion-label>Perfil</ion-label>        
+        </ion-tab-button>
+        
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
+

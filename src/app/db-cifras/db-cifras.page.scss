@@ -1,0 +1,111 @@
+.teste{
+    word-spacing: 5px;
+    line-height: 1.5;
+    margin-right: 20px;
+    margin-left: 20px;
+    
+    }
+    ion-toolbar {
+     --background: white;
+      --border: none;
+    }
+    ion-header {
+        &.header-md:after {
+          --background: none;
+          --border: none;
+        }
+      }
+    
+    .iconhead{
+        margin-top: 8px;
+        margin-right: 70px;
+        height: 50px;
+        width: 50px;
+      }
+    
+    ion-segment-button {
+        
+        height: 30px;
+        min-height: 30px;
+        min-width: auto;
+        margin: 1px !important;
+        --background:white;
+        --color:#480057;
+        --background-checked: linear-gradient(to right, #f80341, #750099)!important;
+        --color-checked: white;
+        border-radius: .5rem !important;
+        border-style: solid; 
+        border-width: 1px;
+        --indicator-color : transparent!important;
+    
+      }
+      
+    
+      
+    
+      ::-webkit-scrollbar {
+        display: none !important;
+    }
+    
+      .tituloCifras{
+        margin-left: 20px;
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    
+      }
+      .tituloCifras2{
+        margin-right: 20px;
+        margin-top: 10px;
+        font-size: 18px;
+        
+    
+      }
+    
+      ion-segment-button ion-label{
+        font-size: 12px;
+    }
+    
+    ion-card{
+       width: 120%;
+       height: 160px;
+       box-shadow: none;
+       border-radius: 12px;
+    
+    
+    img{
+        object-fit:cover;
+        width: 100%;
+        transform: scale(1.1, 1.1) rotate(1deg);
+        transition: 600ms all ease-in-out;
+        }
+    }
+    
+    .swiper-slide-active{
+        transform: scale(1.2, 1.05);
+    }
+    
+    .swiper-slide {
+        transition: 400ms all ease-in-out;
+    
+    }
+    
+    ion-tab-bar {
+        --background: transparent;
+        background-image: linear-gradient(to right, #f80341, #750099)!important;
+        border-radius: 40px 40px 0px 0px;
+        
+    }
+    
+    ion-tab-button{
+        color: rgb(255, 255, 255);
+    }
+    
+    ion-footer {
+        &.footer-md::before {
+            background: transparent;
+        }
+    }
+    
+    
+    

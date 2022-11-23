@@ -1,0 +1,87 @@
+ion-header {
+    &.header-md:after {
+      background: white;
+      }
+    ion-toolbar {
+      --background: transparent;
+      background-image: linear-gradient(to right, #f80341, #750099)!important;
+        color: white;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        
+    }
+  }
+
+  .text2{
+    margin-top: -8px !important;
+
+  }
+
+  ion-title{
+    position: relative;
+    text-align: center;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+
+
+  }
+  .lista1{
+  font-size: 25px;
+  height: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+  --border-radius: 45px;
+ }
+
+ .botao2{
+  font-size: 25px;
+  height: 50px;
+  padding-right: 25px;
+  padding-left: 25px;
+  --border-radius: 45px;
+ }
+
+  .iconhead{
+      position: relative;
+   
+    height: 40px;
+    width: 40px;
+    margin-top: 1px;
+  }
+
+  .iconList{
+    margin-right: 30px;
+    margin-top: 15px;
+   
+      height: 40px;
+      width: 40px;
+    }
+    
+    .subTitulo{
+  margin-left: 30px;
+}
+
+ion-list{
+  margin-left: 20px;
+}
+    
+ion-tab-bar {
+  --background: transparent;
+  background-image: linear-gradient(to right, #f80341, #750099)!important;
+  border-radius: 40px 40px 0px 0px;
+  
+}
+
+ion-tab-button{
+  color: rgb(255, 255, 255);
+}
+
+ion-footer {
+  &.footer-md::before {
+      background: transparent;
+  }
+}
+
+ion-select{
+  font-size: 20px;
+}

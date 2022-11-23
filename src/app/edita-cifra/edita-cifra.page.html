@@ -1,0 +1,106 @@
+<ion-header no-border>
+  <ion-toolbar no-border-bottom>
+
+
+  <ion-avatar slot="start">
+    <ion-icon name="arrow-back-circle-outline" class="iconhead3" [routerLink]="['/cria-cifra']"></ion-icon>
+  </ion-avatar>
+
+    <div class="wrapper">
+
+      <ion-grid>
+        <ion-row >
+         
+         
+          <ion-col>
+            <h4>{{estilo2}}</h4> 
+          </ion-col>
+          <ion-col>   
+            <ion-icon class="icone1" name="arrow-back-outline" (click)="swipeBack()"></ion-icon>
+        </ion-col>
+          <ion-col>
+            <h4>{{repertorio+' / '+contador}}</h4>
+          </ion-col>
+          <ion-col>
+              <ion-icon class="icone1"  name="arrow-forward-outline" (click)="swipeNext()"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-label class="titulo" *ngFor="let item of dataPdf;" >{{item.musica}} / {{item.artista}}</ion-label>
+      </ion-grid>
+      </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="cifraScreen2" id="teste">
+
+  
+  <ion-slides pager="true" #mySlider  paginationType="bullets" [options]="slideOpts"  class="cifraScreen3">
+    <ion-slide *ngFor="let item of dataPdf;" class="cifraScreen">
+
+
+        <ion-textarea [disabled]="editar === false" 
+        [(ngModel)]="textoArea"
+        [(ngModel)]="item.cifra"
+        id="scrollMe"
+        class="cifraScreen4"
+        id="span"
+        autoGrow="true" 
+        value={{item.cifra}}
+        > </ion-textarea>
+ 
+
+      
+      </ion-slide>
+    </ion-slides>
+    
+    
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button  size="medium" color="dark" (click)="salvar()"  [disabled]="editar === true" [disabled]="ativado === 1"> 
+       Editar
+      </ion-fab-button>
+
+      <ion-fab-button size="medium" color="dark" (click)="editarTexto()" [disabled]="editar === false" [disabled]="ativado === 1"> 
+        Salvar
+      </ion-fab-button>
+      </ion-fab>
+
+</ion-content>
+
+
+<!-- Fade Footer -->
+<ion-footer transparent>
+  <ion-toolbar transparent>
+    <ion-tabs transparent>
+      <ion-tab-bar slot="bottom" >
+
+        <ion-tab-button (click)="zomPage()">
+        <ion-icon name="add-outline"></ion-icon>
+        <ion-label>Zoom +</ion-label> 
+        </ion-tab-button>
+
+        <ion-tab-button (click)="zomPage2()">
+          <ion-icon name="remove-outline"></ion-icon>
+          <ion-label>Zoom -</ion-label> 
+          </ion-tab-button>
+
+        <ion-tab-button  (click)="scrollContent('inicia')" [disabled]="ativado === 1"> 
+          <ion-icon name="play-circle-outline"></ion-icon>   
+          <ion-label>Play</ion-label>      
+        </ion-tab-button>
+
+       
+        <ion-tab-button  (click)="scrollContent2()"> 
+          <ion-icon name="stop-circle-outline"></ion-icon>    
+          <ion-label>Parar</ion-label>     
+        </ion-tab-button>
+
+        <ion-tab-button  (click)="velocidadeplay()" [disabled]="ativado === 1"> 
+          <h5  class="nomevel"> x {{contvel}}</h5>  
+          <ion-label>Velocidade</ion-label>      
+        </ion-tab-button>
+        
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,60 @@
+
+
+ ion-list{
+    padding-top: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.botoes{
+    margin-top: 50px;
+}
+ion-button{
+    margin-top: 10px;
+    height: 60px;
+    border-radius: 50px;
+}
+ion-header {
+    &.header-md:after {
+        background: transparent;
+      }
+    ion-toolbar {
+        z-index: 1;
+        --background: transparent;
+        background-image: linear-gradient(to right, #f80341, #750099)!important;
+        border-radius: 0px 0px 50px 50px;
+        color: white;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        
+        
+    }
+
+  }
+
+.forms{
+    ion-item{
+    border-radius: 50px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    margin-top: 10px;
+
+  }
+  }
+
+  h4{
+
+      text-align: center;
+    
+  }
+  img{
+      z-index: 2;
+      position: fixed;
+      width: 80px;
+      height: 80px;
+      margin-left: 38%;
+      margin-top: -40px;
+  }
+
+ 

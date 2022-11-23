@@ -1,0 +1,36 @@
+<ion-header no-border>
+  <ion-toolbar no-border-bottom>
+    <ion-title>
+      <h4><strong>Registre uma nova conta</strong></h4>
+    </ion-title>
+  </ion-toolbar>
+  <img src="assets/images/logo.png">
+</ion-header>
+<ion-content>
+  <ion-list>
+    <div class="forms">
+
+      <ion-item lines ="none">
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" placeholder="Nome Completo" [(ngModel)]="user.name"></ion-input>
+        <ion-icon name="person" color="dark" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item lines ="none">
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="text" placeholder="E-mail" [(ngModel)]="user.email"></ion-input>
+        <ion-icon name="mail" color="dark" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item lines ="none">
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" placeholder="Senha" [(ngModel)]="user.password"></ion-input>
+        <ion-icon name="lock-closed" color="dark" slot="start"></ion-icon>
+      </ion-item>
+      </div>
+
+      <div class="botoes">
+        <ion-button (click)="register()" expand="block"  color="dark" shape="round">Cadastrar</ion-button>
+        <ion-button fill="outline"  expand="block" color="dark" routerLink="/login" shape="round">Já tenho uma conta</ion-button>
+      </div>
+  </ion-list>
+
+</ion-content>

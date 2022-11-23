@@ -1,0 +1,31 @@
+<ion-header no-border>
+  <ion-toolbar no-border-bottom>
+    <ion-title>
+      <h4><strong>Recuperar Senha</strong></h4>
+    </ion-title>
+  </ion-toolbar>
+  <img src="assets/images/logo.png">
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    
+    <div class="forms">
+
+      <ion-item lines ="none">
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="text" placeholder="E-mail" [(ngModel)]="email"></ion-input>
+        <ion-icon name="mail" color="dark" slot="start"></ion-icon>
+      </ion-item>
+
+  </div>
+    <div class="botoes">
+      <ion-button (click)="reset()" expand="block"  color="dark" shape="round">Recuperar por e-mail</ion-button>
+      <ion-button fill="outline"  expand="block" color="dark" routerLink="/login" shape="round"> Voltar</ion-button>
+    </div>
+    </ion-list>
+</ion-content>
+
+
+

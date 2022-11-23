@@ -1,0 +1,68 @@
+<ion-header no-border>
+  <ion-toolbar no-border-bottom>
+
+    <ion-avatar slot="start">
+      <ion-icon name="arrow-back-circle-outline" class="iconhead3" (click)="goBack()"></ion-icon>
+    </ion-avatar>
+
+    <ion-title>
+      <h5><strong>{{musicaFront}}</strong></h5>
+      <h6 class="text2">{{artistFront}}</h6>
+    </ion-title>
+    <ion-avatar slot="end">
+      <ion-icon class="iconhead" name="copy-outline" (click)="openSelect()"></ion-icon>
+    </ion-avatar>
+    <ion-select hidden  #select1 placeholder="Selecione uma categoria..." [(ngModel)]="selectedVal" (ionChange)="loadLists($event);"  interface="action-sheet">
+      <ion-select-option *ngFor="let item of data2" [value]="item">
+        {{item.categoria}}
+       </ion-select-option>
+      </ion-select>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-textarea 
+  id="container"
+  style="margin: 5%"
+  class="cifraarea"
+  autoGrow="true" 
+  [innerText]="cifra"
+  ></ion-textarea>
+</ion-content>
+
+<ion-footer transparent>
+  <ion-toolbar transparent>
+    <ion-tabs transparent>
+      <ion-tab-bar slot="bottom" >
+
+        <ion-tab-button (click)="zomPage()">
+        <ion-icon name="add-outline"></ion-icon>
+        <ion-label>Zoom +</ion-label> 
+        </ion-tab-button>
+
+        <ion-tab-button (click)="zomPage2()">
+          <ion-icon name="remove-outline"></ion-icon>
+          <ion-label>Zoom -</ion-label> 
+          </ion-tab-button>
+
+        <ion-tab-button  (click)="scrollContent('inicia')" [disabled]="ativado === 1"> 
+          <ion-icon name="play-circle-outline"></ion-icon>   
+          <ion-label>Play</ion-label>      
+        </ion-tab-button>
+
+       
+        <ion-tab-button  (click)="scrollContent2()"> 
+          <ion-icon name="stop-circle-outline"></ion-icon>    
+          <ion-label>Parar</ion-label>     
+        </ion-tab-button>
+
+        <ion-tab-button  (click)="velocidadeplay()" [disabled]="ativado === 1"> 
+          <h5  class="nomevel"> x {{contvel}}</h5>  
+          <ion-label>Velocidade</ion-label>      
+        </ion-tab-button>
+        
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

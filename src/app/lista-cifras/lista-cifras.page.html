@@ -1,0 +1,29 @@
+<ion-header no-border>
+  <ion-toolbar no-border-bottom>
+    <ion-avatar slot="start">
+      <ion-icon name="arrow-back-circle-outline" class="iconhead3" (click)="goBack()"></ion-icon>
+    </ion-avatar>
+    <ion-title>
+      <h4><strong>{{artista}}</strong></h4>
+  <ion-input  placeholder="Pesquisar por nome..." [(ngModel)]="filterTerm" animated="true"></ion-input>
+    </ion-title>
+    <ion-avatar  slot="end">
+      <ion-icon class="iconhead" name="search-outline"></ion-icon>
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item  *ngFor="let item of categories | filter:filterTerm" (click)="itemClick(item)">
+      <ion-label text-wrap>
+         <h2>{{item.musica}}</h2>
+      </ion-label>
+ 
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+ 
+    </ion-item>
+ 
+  </ion-list>
+</ion-content>

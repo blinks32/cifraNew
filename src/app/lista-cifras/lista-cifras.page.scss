@@ -1,0 +1,37 @@
+ion-header {
+    &.header-md:after {
+      background: transparent;
+      }
+    ion-toolbar {
+        --background: transparent;
+        background-image: linear-gradient(to right, #f80341, #750099)!important;
+        border-radius: 0px 0px 30px 30px;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+  }
+
+  .iconhead3{
+    margin-left: 30px;
+    margin-top: 15px;
+   
+      height: 35px;
+      width: 35px;
+    }
+
+  .text2{
+      margin-top: -8px !important;
+  }
+ ion-input{
+  margin-left: -5px !important;
+ }
+
+  .iconhead{
+  margin-right: 30px;
+  margin-top: 15px;
+ 
+    height: 35px;
+    width: 35px;
+  }

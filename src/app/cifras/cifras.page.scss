@@ -1,0 +1,102 @@
+.teste{
+    display: flex;
+    flex-wrap: wrap;
+    word-spacing: -2px;
+    line-height: 1;
+    padding: 20px;
+    }
+
+    
+
+    ion-header {
+        &.header-md:after {
+          background: transparent;
+          }
+        ion-toolbar {
+            --background: transparent;
+            background-image: linear-gradient(to right, #f80341, #750099)!important;
+            border-radius: 0px 0px 30px 30px;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+        }
+      }
+
+      .text2{
+          margin-top: -8px !important;
+      }
+
+      .iconhead{
+      margin-right: 30px;
+      margin-top: 15px;
+     
+        height: 35px;
+        width: 35px;
+      }
+      .iconhead3{
+        margin-left: 30px;
+        margin-top: 15px;
+       
+          height: 35px;
+          width: 35px;
+        }
+
+      .iconhead2{
+        margin-left: 30px;
+        margin-top: 15px;
+       
+          height: 35px;
+          width: 35px;
+        }
+
+      ion-tab-bar {
+        --background: transparent;
+        background-image: linear-gradient(to right, #f80341, #750099)!important;
+        border-radius: 40px 40px 0px 0px;
+        
+      }
+      
+      ion-tab-button{
+        color: rgb(255, 255, 255);
+      }
+      
+      ion-footer {
+        &.footer-md::before {
+            background: transparent;
+        }
+      }
+    
+      
+    
+  h4{
+    color: white;
+  }
+
+  .iconZoom{
+    margin-bottom: 10px;
+  }
+
+  ion-textarea{
+    margin-left: 4px;
+    margin-right: 4px;
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .titulo{
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .nomevel{
+    display: flex;
+    margin-bottom: 3px;;
+    margin-top: 9px;;
+  }
+
+  ion-buttons{
+    width: 55px;
+    height: 55px;
+  }

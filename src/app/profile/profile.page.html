@@ -1,0 +1,74 @@
+<ion-header no-border>
+  <ion-toolbar no-border-bottom>
+    <ion-title>
+      <ion-icon class="iconhead" name="person-circle-outline"></ion-icon>
+      <ion-icon class="iconhead2" (click)="logout()" name="log-out-outline"></ion-icon>
+      <h5><strong>Usuário</strong></h5>
+      <h6 class="text2">{{userLogado.name}}</h6>
+      <h5><strong>E-mail</strong></h5>
+      <h6 class="text2">{{userLogado.email}}</h6>
+    </ion-title>
+   <!-- Default Progressbar with 50 percent -->
+   <app-progress-bar [progressValue]="loadProgress"></app-progress-bar>
+   
+  </ion-toolbar>
+
+  
+</ion-header>
+
+
+<ion-content>
+  <div class="planos">
+  <ion-list>
+    <div class="botoes">
+      <ion-label><strong>Planos</strong></ion-label><br>
+      <ion-button  expand="block" fill="outline" *ngIf="currentPlan !== 'free'" color="dark" (click)="Gotopayment(0)" > GRATUITO</ion-button>
+      <ion-button  expand="block" *ngIf="currentPlan === 'free'" color="dark" (click)="Gotopayment(0)" > GRATUITO</ion-button>
+      <ion-button  expand="block"  *ngIf="currentPlan === 'standard'" color="dark" (click)="Gotopayment(1)"> STANDARD</ion-button>
+      <ion-button  expand="block" fill="outline"  *ngIf="currentPlan !== 'standard'" color="dark" (click)="Gotopayment(1)"> STANDARD</ion-button>
+      <ion-button  expand="block"  *ngIf="currentPlan === 'premuim'" color="dark" (click)="Gotopayment(2)"> PREMIUM</ion-button>
+      <ion-button fill="outline"  expand="block"  *ngIf="currentPlan !== 'premuim'" color="dark" (click)="Gotopayment(2)"> PREMIUM</ion-button>
+    </div>
+    </ion-list>
+    <ion-label><strong>Tema</strong></ion-label><br>
+    <ion-item>
+      <ion-toggle [ngModel]="darkMode" (ionChange)='toggleTheme($event)' >
+      </ion-toggle>
+    </ion-item>
+    
+    <ion-button class="tema2" fill="outline" expand="block" color="dark" (click)="check()"> BACKUP</ion-button>
+  </div>
+
+</ion-content>
+
+
+<!-- Fade Footer -->
+<ion-footer transparent>
+  <ion-toolbar transparent>
+    <ion-tabs transparent>
+      <ion-tab-bar slot="bottom" >
+
+        <ion-tab-button tab="tab1" routerLink="/db-cifras">
+          <ion-icon name="musical-notes" ></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+  
+        <ion-tab-button routerLink="/post-cifra" >
+          <ion-icon name="download"></ion-icon>
+          <ion-label>Pdf</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button routerLink="/cria-cifra" >   
+          <ion-icon name="add-circle-sharp"></ion-icon>
+          <ion-label>Cifra</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button routerLink="/profile" > 
+          <ion-icon name="person-circle-sharp" color="dark"></ion-icon>
+          <ion-label>Perfil</ion-label>        
+        </ion-tab-button>
+        
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

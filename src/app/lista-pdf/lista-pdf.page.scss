@@ -1,0 +1,115 @@
+ion-header {
+    &.header-md:after {
+      background: transparent;
+      }
+    ion-toolbar {
+        --background: transparent;
+        background-image: linear-gradient(to right, #f80341, #750099)!important;
+        border-radius: 0px 0px 30px 30px;
+        color: white;
+      
+    }
+  }
+
+  .wrapper {
+    padding-left: 4%;  
+  }
+
+  ion-icon {
+    font-size: 30px; //Preferred size here
+    margin-top: 20% !important;  
+}
+
+ 
+ion-tab-bar {
+  --background: transparent;
+  background-image: linear-gradient(to right, #f80341, #750099)!important;
+  border-radius: 40px 40px 0px 0px;
+  
+}
+
+ion-tab-button{
+  color: rgb(255, 255, 255);
+}
+
+ion-footer {
+  
+  &.footer-md::before {
+      background: transparent;
+  }
+}
+
+
+  ion-slide {
+    height: auto!important;
+    scroll-behavior: smooth;
+
+    }
+
+   
+    ion-slides { 
+      height: initial; }
+
+      ion-slide{
+        scroll-behavior: smooth;
+
+        ion-list{
+            height: 100vh;
+            overflow-y: scroll;
+        }
+  }
+  
+  pdf-viewer{
+    scroll-behavior: smooth;
+
+  }
+
+  .pageTop{
+    scroll-behavior: smooth;
+
+  }
+
+  ion-content{
+    scroll-behavior: smooth;
+
+  }
+
+  .ng2-pdf-viewer-container{
+    scroll-behavior: auto;
+
+  }
+
+  .pdfViewer{
+    scroll-behavior: smooth;
+
+  }
+
+  h5{
+    color: white;
+  }
+
+  .iconZoom{
+    margin-bottom: 10px;
+  }
+
+
+  .nomevel{
+    display: flex;
+    margin-bottom: 3px;;
+    margin-top: 9px;;
+  }
+  .titulo{
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .btn1{
+    position: static;
+    width:15px;
+    padding-left:85%;
+    background-color: transparent !important; 
+    list-style-type: none;
+
+
+  }

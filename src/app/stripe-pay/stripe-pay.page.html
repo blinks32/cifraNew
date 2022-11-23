@@ -1,0 +1,52 @@
+<ion-content class="ion-text-center ">
+
+  <ion-row>
+    <ion-col class="headCss1">
+      <ion-icon name="arrow-back-circle-outline" class="iconhead3" (click)="goBack()"></ion-icon>
+      <ion-text class="tutlePlan" >ASSINATURA</ion-text> 
+    </ion-col>
+    </ion-row>
+    <ion-row>
+      <div class="headCss">
+        <ion-icon class="iconPlan" name="star"></ion-icon><br>
+        <ion-text> Assinatura </ion-text><br>
+        <ion-text class="nameplan"> {{connector.Slected_product_name}}</ion-text><br>
+        <ion-text> Selecionado </ion-text><br><br>
+        <h6> {{planos}}</h6><br>
+      </div>
+    </ion-row>
+
+  <ion-list-header class="ion-text-center">
+    <br><br><br><br>
+    <ion-label color="primary"><h2>Adcionar cartão de pagamento</h2></ion-label>
+  </ion-list-header>
+
+  <ion-card>
+    <ion-card-content>
+      <form action="/" method="post" id="payment-form">
+        <div class="form-row ion-padding-bottom">
+          <div id="card-element"> <!-- a Stripe Element will be inserted here. --> </div>
+          <!-- Used to display Element errors -->
+          <div id="card-errors" role="alert"></div>
+        </div>
+
+          <ion-button shape="round" expand="block" size='large' type="submit" color="dark">
+            <ion-icon *ngIf="!approve" color='light' slot="icon-only" name="checkmark-sharp"></ion-icon>
+            <ion-progress-bar *ngIf="approve"color='light' type="indeterminate"></ion-progress-bar>
+            <ion-label *ngIf="!approve">Pagar</ion-label> 
+             
+          </ion-button>
+        
+      </form>
+    </ion-card-content>
+  </ion-card>
+ <br>
+      <ion-list-header>
+        <ion-label color="primary" class="ion-text-center test">
+          <h1>Test Card</h1>
+          <p>4242424242424242 2/25 544 1324</p>
+        </ion-label>
+    </ion-list-header>
+
+</ion-content>
+

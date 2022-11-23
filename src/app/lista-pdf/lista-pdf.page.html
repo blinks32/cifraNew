@@ -1,0 +1,101 @@
+<ion-header no-border>
+  <ion-toolbar no-border-bottom>
+      
+    <div class="wrapper">
+
+      <ion-grid>
+        <ion-row >
+          <ion-col>    
+            <ion-icon name="arrow-back-circle-outline" routerLink="/post-cifra"></ion-icon>
+        </ion-col>
+         
+          <ion-col>
+            <h4>{{estilo2}}</h4>
+          </ion-col>
+          <ion-col>   
+            <ion-icon class="icone1" name="arrow-back-outline" (click)="swipeBack()"></ion-icon>
+        </ion-col>
+          <ion-col>
+            <h4>{{repertorio+' / '+contador}}</h4>
+          </ion-col>
+          <ion-col>
+              <ion-icon name="arrow-forward-outline" (click)="swipeNext()"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-label class="titulo">{{dataPdf[0].musica}} / {{dataPdf[0].artista}}</ion-label>
+
+      </ion-grid>
+      </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+
+
+  <ion-slides pager="true" #mySlider  paginationType="bullets" [options]="slideOpts"  class="pageTop">
+    <ion-slide *ngFor="let item of dataPdf;">
+      <pdf-viewer
+      [src]="item.linkBase64"
+      [show-all]="true"      
+      [render-text]="true"
+      [original-size]="false"
+      [page]="page" 
+      [zoom]="zoom"
+      (after-load-complete)="afterLoadComplete($event)"
+      style="width: 100%; height: 600px"
+      [stick-to-page]="true"
+      ></pdf-viewer>
+      </ion-slide>
+    </ion-slides>
+
+    
+
+      <ion-fab vertical="bottom" horizontal="end" >
+        <ion-fab-button size="small" color="dark" (click)="zomPage()" [disabled]="ativado === 1"> 
+          +
+        </ion-fab-button>
+        <ion-fab-button size="small" color="dark" (click)="zomPage2()" [disabled]="ativado === 1" > 
+          -
+        </ion-fab-button>
+        </ion-fab>
+
+</ion-content>
+
+
+<!-- Fade Footer -->
+<ion-footer transparent>
+ 
+
+  <ion-toolbar transparent>
+   
+    <ion-tabs transparent>
+      <ion-tab-bar slot="bottom">
+  
+        <ion-tab-button  (click)="previousPage()" [disabled]="page === 1">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-tab-button>
+
+        <h5 class="pagFont">Pg.{{page}}/{{totalPages}} </h5>
+    
+        <ion-tab-button  (click)="nextPage()" [disabled]="totalPages === 1 || page === totalPages">   
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button  (click)="scrollContent('inicia')" [disabled]="ativado === 1"> 
+          <ion-icon name="play-circle-outline"></ion-icon>        
+        </ion-tab-button>
+
+        <ion-tab-button  (click)="scrollContent2()"> 
+          <ion-icon name="stop-circle-outline"></ion-icon>        
+        </ion-tab-button>
+
+        <ion-tab-button  (click)="velocidadeplay()" [disabled]="ativado === 1"> 
+          <h5  class="nomevel"> x {{contvel}}</h5>  
+          <ion-label>Velocidade</ion-label>      
+        </ion-tab-button>
+        
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

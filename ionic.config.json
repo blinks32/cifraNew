@@ -1,0 +1,14 @@
+{
+  "name": "Ciflex",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/endpoints",
+      "proxyUrl": "http://cors.api.com/api"
+    }
+  ]
+}
