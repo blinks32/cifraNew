@@ -63,6 +63,7 @@ export class ProfilePage implements OnInit {
   nameArray: any;
   myToast: HTMLIonToastElement;
   currentPlan: any = 'free';
+  myAlert: HTMLIonAlertElement;
 
   constructor(
     private auth: AngularFireAuth,
@@ -208,6 +209,20 @@ export class ProfilePage implements OnInit {
       });
       await this.myToast.present();
       
+      
+    }
+
+
+    async presentAlert() {
+      this.myAlert =  await this.alertCtrl.create({
+        //spinner: null,
+       // duration: 5000,
+        message: 'SUCCESS'
+        //translucent: true,
+        //backdropDismiss: true
+      });
+      await this.myAlert.present();
+      
     }
     
     Gotopayment(val){
@@ -238,10 +253,10 @@ export class ProfilePage implements OnInit {
       if (this.checker.currentPlan == 'premuim')
       num = true
       if (!this.checker.phoneChanged && num){
+        this.presentLoading('Downloading...')
       const db = getDatabase();
       const dbRef = ref(db, '/cifraspdf/' + this.user.uid);
       onValue(dbRef, (snapshot2) => {
-        this.presentLoading(0)
         this.nameArray = [];
         this.allLinks = [];
         snapshot2.forEach(element => {
@@ -269,7 +284,6 @@ export class ProfilePage implements OnInit {
       this.nativeHTTP.sendRequest(this.allLinks[this.currentLink], { method: "get", responseType: "arraybuffer" }).then(
         httpResponse => {
          // alert("File dowloaded successfully");
-         this.presentLoading(this.nameArray[this.currentLink]);
           console.log("File dowloaded successfully")
           this.downloadedFile = new Blob([httpResponse.data], { type: 'application/pdf' });
           this.writeFile();
@@ -282,6 +296,7 @@ export class ProfilePage implements OnInit {
       console.log('All Files Have Been backed Up.')
       this.currentLink = -1
       this.myToast.dismiss();
+      this.presentAlert();
       this.checker.checkIfUploaidng = true;
     }
     }
