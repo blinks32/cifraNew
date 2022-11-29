@@ -134,7 +134,7 @@ zoom = 1;
           let trip = [];
           snapshot2.forEach((childSnapshot) => {
           const data2 = childSnapshot.val();
-       
+          console.log(data2);
           trip.push(data2);
           this.data = trip;
           let json = JSON.stringify(this.data);
@@ -156,6 +156,30 @@ zoom = 1;
       })
     
 
+   }
+
+
+   RemoveItem(){
+    const db = getDatabase();
+    const dbRef = ref(db, '/cifraspdf/'+this.logado2+'/'+this.estilo+'/');
+    onValue(dbRef, (snapshot2) => {
+      console.log(snapshot2.key, this.estilo, this.logado2)
+      snapshot2.forEach((childSnapshot) => {
+        const data2 = childSnapshot.val();
+        console.log(data2);
+     
+      if (data2.artista == this.dataPdf[0].artista){
+        console.log(data2)
+      }
+      console.log(this.logado2, this.estilo)
+    // this.afDB.database.ref('/cifraspdf/'+this.logado2+'/'+this.estilo+'/').remove().then(()=>{
+
+    // })
+
+
+
+  })
+  })
    }
 
 
@@ -246,6 +270,8 @@ zoom = 1;
     this.contador2++;
     this.dataPdf = this.data.slice(this.contador2,this.contador2+1);
     this.repertorio = this.contador2;
+    console.log(this.contador2, this.dataPdf)
+    console.log(this.dataPdf[this.contador2].artista);
     this.repertorio +=1;
     console.log(this.dataPdf);
       }
@@ -261,7 +287,8 @@ zoom = 1;
     this.dataPdf = this.data.slice(this.contador2,this.contador2+1);
     this.repertorio = this.contador2;
     this.repertorio += 1;  
-    console.log(this.dataPdf[0].musica);
+    console.log(this.contador2, this.dataPdf)
+    console.log(this.dataPdf[this.contador2].artista);
   }
  );
   }
