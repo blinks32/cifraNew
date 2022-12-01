@@ -25,7 +25,9 @@
               <ion-icon class="icone1"  name="arrow-forward-outline" (click)="swipeNext()"></ion-icon>
           </ion-col>
         </ion-row>
+        <div *ngIf="dataPdf">
         <ion-label class="titulo" *ngFor="let item of dataPdf;" >{{item.musica}} / {{item.artista}}</ion-label>
+      </div>
       </ion-grid>
       </div>
   </ion-toolbar>
@@ -56,6 +58,10 @@
     
     
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button  size="medium" color="dark" (click)="RemoveItem()"  [disabled]="editar === true" [disabled]="ativado === 1"> 
+        Deletar
+       </ion-fab-button>
+
       <ion-fab-button  size="medium" color="dark" (click)="salvar()"  [disabled]="editar === true" [disabled]="ativado === 1"> 
        Editar
       </ion-fab-button>

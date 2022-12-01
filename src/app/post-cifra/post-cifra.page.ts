@@ -350,7 +350,13 @@ export class PostCifraPage implements OnInit {
                   linkcifra: this.userUpload.imgURL,
                   usuario: user.email,
                   linkBase64: datapdf2
-                 });
+                 }).then((d)=>{
+                  console.log(d);
+                  this.afDB.object('cifraspdf/' + user.uid+ '/' + this.armazenaIdCat+ '/' + d.key).update({
+                    id: d.key,
+                 })
+
+                })
                 
                  this.file.createDir(this.file.externalApplicationStorageDirectory,'Ciflex'+this.uid, true).then((val)=>{
                   console.log("Criado "+val);

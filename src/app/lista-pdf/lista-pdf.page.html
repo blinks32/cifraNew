@@ -22,7 +22,7 @@
               <ion-icon name="arrow-forward-outline" (click)="swipeNext()"></ion-icon>
           </ion-col>
         </ion-row>
-        <ion-label class="titulo">{{dataPdf[0].musica}} / {{dataPdf[0].artista}}</ion-label>
+        <ion-label *ngIf="dataPdf[0]" class="titulo">{{dataPdf[0].musica}} / {{dataPdf[0].artista}}</ion-label>
 
       </ion-grid>
       </div>
@@ -52,6 +52,9 @@
     
 
       <ion-fab vertical="bottom" horizontal="end" >
+        <ion-fab-button size="small" color="dark" (click)="RemoveItem()" [disabled]="ativado === 1"> 
+          x
+        </ion-fab-button>
         <ion-fab-button size="small" color="dark" (click)="zomPage()" [disabled]="ativado === 1"> 
           +
         </ion-fab-button>

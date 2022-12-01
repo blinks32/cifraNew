@@ -76,6 +76,7 @@ zoom = 15;
     hideurlbar:'yes',//Or 'no'
 
 };
+  userID: string;
 
   constructor(
 
@@ -128,7 +129,8 @@ zoom = 15;
         
         
         if (user) {
-                 
+              
+          this.userID = user.uid
        
           const db = getDatabase();
           const dbRef = ref(db, '/cifras/'+user.uid+'/'+this.estilo+'/');
@@ -166,6 +168,35 @@ zoom = 15;
     console.log(this.dataPdf[0].id)
     console.log(this.editar)
   }
+
+  async presentALert(f) {
+    const loading = await this.alertCtrl.create({
+      message: f,
+    });
+    await loading.present();
+ 
+  }
+
+
+  RemoveItem(){
+    console.log(this.dataPdf[0].id, this.logado2, this.estilo);
+    console.log(this.data);
+
+    for (let index = 0; index < this.data.length; index++) {
+      const element = this.data[index];
+      if (element.musica == this.dataPdf[0].musica){
+        this.data.splice(index, 1);
+        let json = JSON.stringify(this.data);
+        localStorage.setItem('ciflex'+this.estilo+this.logado2, json);
+        break
+       }
+    }
+    this.afDB.database.ref('/cifras/'+this.userID+'/'+this.estilo+'/'+ this.dataPdf[0].id).remove().then((d)=>{
+        console.log(d)
+        this.presentALert('Success');
+     })
+   
+    }
 
   editarTexto(){
  
